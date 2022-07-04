@@ -1,6 +1,7 @@
 h1 {
-    border: 2px #eee solid;
-    color: brown;
+    border: 2px rgb(10, 0, 0) solid;
+    color: rgba(117, 47, 46, 0.982);
     text-align: center;
     padding: 10px;
 }
+
