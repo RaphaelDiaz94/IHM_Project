@@ -1,5 +1,12 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>{% block title %}IHM Coral{% endblock %}</h1>
+    <h1>{% block title %}test{% endblock %}</h1>
+    <form action = "http://localhost:5000/result" method = "POST">
+        <p>Name <input type = "text" name = "Name" /></p>
+        <p>Physics <input type = "text" name = "Physics" /></p>
+        <p>Chemistry <input type = "text" name = "chemistry" /></p>
+        <p>Maths <input type ="text" name = "Mathematics" /></p>
+        <p><input type = "submit" value = "submit" /></p>
+    </form>
 {% endblock %}
