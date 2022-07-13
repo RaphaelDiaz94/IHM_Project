@@ -1,13 +1,25 @@
 <!doctype html>
 <html>
    <body>
-      <table border = 1>
-         {% for key, value in result.items() %}
-            <tr>
-               <th> {{ key }} </th>
-               <td> {{ value }} </td>
-            </tr>
-         {% endfor %}
-      </table>
+      <table class="table">
+         <thead>
+   
+           
+           <tr>
+             <th scope="col">#</th>
+             <th scope="col">Element</th>
+             <th scope="col">Nombre</th>
+             <th scope="col">Precision</th>
+           </tr>
+         </thead>
+         <tbody>
+             {% for key, value in result.items() %}
+                <tr>
+                   <th> {{ key }} </th>
+                   <td> {{ value }} </td>
+                </tr>
+             {% endfor %}
+         </tbody>
+       </table>
    </body>
 </html>
