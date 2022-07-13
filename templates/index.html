@@ -3,10 +3,9 @@
 {% block content %}
     <h1>{% block title %}test{% endblock %}</h1>
     <form action = "https://ihmflask.herokuapp.com/result" method = "POST">
-        <p>Name <input type = "text" name = "Name" /></p>
-        <p>Physics <input type = "text" name = "Physics" /></p>
-        <p>Chemistry <input type = "text" name = "chemistry" /></p>
-        <p>Maths <input type ="text" name = "Mathematics" /></p>
+        <p>Name <input type = "text" name = "Element" /></p>
+        <p>Physics <input type = "int" name = "Nombre" /></p>
+        <p>Chemistry <input type = "float" name = "Precision %" /></p>
         <p><input type = "submit" value = "submit" /></p>
     </form>
 {% endblock %}
