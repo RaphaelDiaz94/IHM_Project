@@ -1,9 +1,9 @@
 
 from flask import Flask, render_template,request
-from flask_bootstrap import Bootstrap4
+from flask_bootstrap import Bootstrap
 
 app = Flask(__name__)
-Bootstrap4(app)
+Bootstrap(app)
 
 @app.route('/')
 def index():
