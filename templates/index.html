@@ -1,11 +1,12 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>{% block title %}test{% endblock %}</h1>
-    <form action = "https://ihmflask.herokuapp.com/result" method = "POST">
-        <p>Element <input type = "text" name = "Element" /></p>
-        <p>Nombre <input type = "int" name = "Nombre" /></p>
-        <p>Precision <input type = "float" name = "Precision %" /></p>
-        <p><input type = "submit" value = "submit" /></p>
-    </form>
+    <h1>{% block title %}{% endblock %}</h1>
+    {% for row_index in range(x['date']|count) %}
+    <tr>
+      <td>{{ x[row_index]['date']|tojson|safe }}</td>
+      <td>{{ x[row_index]['users'] }}</td>
+    </tr>
+{% endfor %}
+
 {% endblock %}

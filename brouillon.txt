@@ -17,3 +17,27 @@
   <td>90%</td>
 </tr>
 </tbody>
+
+
+
+   <table class="table">
+      <thead>
+      <tr>
+         <th scope="col">Element</th>
+         <th scope="col">nombre</th>
+         <th scope="col">precision</th>
+      </tr>
+      </thead>
+      <tbody>
+         <tr>
+               <td> 
+                  {% for key, value in result.items() %}
+                  {{ value }}
+                  {% endfor %}
+               </td>
+         </tr>
+      </tbody>
+   </table>
+
+
+   DROP TABLE IF EXISTS posts;

@@ -1,0 +1,6 @@
+CREATE TABLE posts (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    Nom TEXT NOT NULL,
+    file BLOB 
+
+);
