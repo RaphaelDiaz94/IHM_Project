@@ -2,11 +2,6 @@
 
 {% block content %}
     <h1>{% block title %}{% endblock %}</h1>
-    {% for row_index in range(x['date']|count) %}
-    <tr>
-      <td>{{ x[row_index]['date']|tojson|safe }}</td>
-      <td>{{ x[row_index]['users'] }}</td>
-    </tr>
 {% endfor %}
 
 {% endblock %}
