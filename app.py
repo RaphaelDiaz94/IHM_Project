@@ -12,7 +12,7 @@ Bootstrap(app)
 def index():
     return render_template('index.html')
 
-def get_db_connection():
+def init_db():
 
     DATABASE_URL = os.environ['DATABASE_URL']
 
@@ -33,3 +33,5 @@ def get_db_connection():
     conn.close()
 
     print("connexion close")
+
+init_db()
