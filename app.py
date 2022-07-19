@@ -14,24 +14,9 @@ def index():
 
 def init_db():
 
-    DATABASE_URL = "postgres://owshwcafnfsgsx:2b4cf5ade3fb7b2f25e3f1b66cd29d5a7e420fdd1d51b4c01df4b6086f1db630@ec2-18-214-35-70.compute-1.amazonaws.com:5432/d5arg29ce13853"
-
-    conn = psycopg2.connect(DATABASE_URL, sslmode='require')
-
+    conn = psycopg2.connect("postgres://owshwcafnfsgsx:2b4cf5ade3fb7b2f25e3f1b66cd29d5a7e420fdd1d51b4c01df4b6086f1db630@ec2-18-214-35-70.compute-1.amazonaws.com:5432/d5arg29ce13853", sslmode='require')
     print("connexion ok")
-
     cur = conn.cursor()
+    print("cursor ok")
+    return cur
 
-    try :
-        cur.execute("CREATE TABLE image (id serial PRIMARY KEY, name varchar);")
-        print("table image créée")
-
-    except psycopg2.Error as e:
-
-        print(e)
-
-    conn.close()
-
-    print("connexion close")
-
-init_db()
