@@ -45,8 +45,10 @@
         </thead>
         <tbody>
         {% for x in range(val|length) %}
+          {{tup = val[x]}}
           <tr>
-            <td>{{val[x]}}</td>
+            {% for i in range(tup|length) %}
+            <td>{{tup[i]}}</td>
           </tr>
         {% endfor %}
         </tbody>
