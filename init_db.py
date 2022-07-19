@@ -12,22 +12,14 @@ cur = conn.cursor()
 #print("table stats créée")
 
 
-#cur.execute("INSERT INTO stats (nom_element, nb_element, precision) VALUES (%s, %s ,%s)",("Personne",2, 80))
-#print("insertion ok")
-#conn.commit()
-#print("commit ok")
+cur.execute("INSERT INTO stats (nom_element, nb_element, precision) VALUES (%s, %s ,%s)",("Velo",4, 75))
+print("insertion ok")
+conn.commit()
+print("commit ok")
 
 cur.execute("SELECT * FROM stats;")
 val = cur.fetchall()
-print(val)
-print("type de val: ", type(val))
-print(len(val))
-for i in range (len(val)):
-    tup = val[i]
-    for x in range (len(tup)):
-        print(tup[x])
 
-    
 cur.close()
 print("cursor close")
 conn.close()
