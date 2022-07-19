@@ -44,7 +44,7 @@
           </tr>
         </thead>
         <tbody>
-        {% for x in range(len(val)) %}
+        {% for x in range(val|length) %}
           <tr>
             <td>{{val[x]}}</td>
           </tr>
