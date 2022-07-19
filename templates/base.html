@@ -45,7 +45,7 @@
         </thead>
         <tbody>
         {% for x in range(val|length)%}
-          tup = {{val[x]}}
+        {% set tup = val[x]%}
           <tr>
             {% for i in range(tup|length) %}
             <td>{{tup[i]}}</td>
