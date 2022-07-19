@@ -18,5 +18,9 @@ def init_db():
     print("connexion ok")
     cur = conn.cursor()
     print("cursor ok")
-    return cur
+    cur.execute("SELECT * FROM stats;")
+    val = cur.fetchone()
+    print(val)
+    print("type de val: ", type(val))
+    return cur,val
 
