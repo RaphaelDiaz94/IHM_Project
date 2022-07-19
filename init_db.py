@@ -23,7 +23,10 @@ print(val)
 print("type de val: ", type(val))
 print(len(val))
 for i in range (len(val)):
-    
+    tup = val[i]
+    for x in range (len(tup)):
+        print(tup[x])
+
     
 cur.close()
 print("cursor close")
