@@ -21,6 +21,7 @@ cur.execute("SELECT * FROM stats;")
 val = cur.fetchone()
 print(val)
 print("type de val: ", type(val))
+print(val[0])
 
 cur.close()
 print("cursor close")

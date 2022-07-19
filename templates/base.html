@@ -44,8 +44,11 @@
           </tr>
         </thead>
         <tbody>
+        {% for x in range(val) %}
           <tr>
+            <td>{{val[x]}}</td>
           </tr>
+        {% endfor %}
         </tbody>
       </table>
     mes valeurs : {{ val }}
