@@ -16,7 +16,7 @@ def index():
     cur = conn.cursor()
     print("cursor ok")
     cur.execute("SELECT * FROM stats;")
-    val = cur.fetchone()
+    val = cur.fetchall()
     print(val)
     print("type de val: ", type(val))
     return render_template('index.html', val=val, cur=cur)
