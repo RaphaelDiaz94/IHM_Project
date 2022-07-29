@@ -22,13 +22,20 @@ def index():
                     aws_secret_access_key= 't1qJKmysOwm/9OvStAERVaQkoRa0dCgGqgOUArJZ',
                      )
     BUCKET_NAME='myphotobucketraph'
-    your_bucket = s3.Bucket('myphotobucketraph')
-    for s3_object in your_bucket.objects.all():
-   
-        #Use this statement if your files are available directly in your bucket. 
-        your_bucket.download_file(s3_object.key, 'test.png')
-        img = Image.open('test.png')
-        print("OK")
+    #s3 = boto3.resource('s3').Bucket('myphotobucketraph')
+    file_name = 'Users_raphaeldiaz_Desktop_test.png'
+    output = f"downloads/{file_name}"
+    #s3.Bucket(BUCKET_NAME).download_file(file_name, output)
+
+    s3.download_file(
+        Bucket = BUCKET_NAME,
+        Filename=file_name,  
+        Key = file_name,  
+        )
+
+    img = Image.open(file_name)
+    print("OK")
+
     
     conn = psycopg2.connect("postgres://owshwcafnfsgsx:2b4cf5ade3fb7b2f25e3f1b66cd29d5a7e420fdd1d51b4c01df4b6086f1db630@ec2-18-214-35-70.compute-1.amazonaws.com:5432/d5arg29ce13853", sslmode='require')
     print("connexion ok")
@@ -39,6 +46,6 @@ def index():
     print(val)
     print("type de val: ", type(val))
 
-    return render_template('index.html', val=val, cur=cur)
+    return render_template('index.html', val=val, cur=cur , img=img)
 
 
