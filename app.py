@@ -22,10 +22,11 @@ def index():
                     aws_secret_access_key= 't1qJKmysOwm/9OvStAERVaQkoRa0dCgGqgOUArJZ',
                      )
     BUCKET_NAME='myphotobucketraph'
-    for s3_object in BUCKET_NAME.objects.all():
+    your_bucket = s3.Bucket('myphotobucketraph')
+    for s3_object in your_bucket.objects.all():
    
         #Use this statement if your files are available directly in your bucket. 
-        BUCKET_NAME.download_file(s3_object.key, 'test.png')
+        your_bucket.download_file(s3_object.key, 'test.png')
         img = Image.open('test.png')
         print("OK")
     
