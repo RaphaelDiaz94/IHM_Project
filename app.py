@@ -22,18 +22,22 @@ def index():
                     aws_secret_access_key= 't1qJKmysOwm/9OvStAERVaQkoRa0dCgGqgOUArJZ',
                      )
     BUCKET_NAME='myphotobucketraph'
-    #s3 = boto3.resource('s3').Bucket('myphotobucketraph')
-    file_name = 'Users_raphaeldiaz_Desktop_test.png'
-    output = f"downloads/{file_name}"
-    #s3.Bucket(BUCKET_NAME).download_file(file_name, output)
 
-    s3.download_file(
+    file_name = 'Users_raphaeldiaz_Desktop_test.png'
+
+
+
+    img = s3.download_file(
         Bucket = BUCKET_NAME,
         Filename=file_name,  
         Key = file_name,  
         )
 
-    img = Image.open(file_name)
+    src=r'/Users/raphaeldiaz/Desktop/IHM_Projet/Users_raphaeldiaz_Desktop_test.png'
+    des=r'/Users/raphaeldiaz/Desktop/IHM_Projet/static/images/Users_raphaeldiaz_Desktop_test.png'
+    os.rename(src,des)
+
+    
     print("OK")
 
     
