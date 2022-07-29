@@ -41,3 +41,7 @@
 
 
    DROP TABLE IF EXISTS posts;
+
+       <script type = "image/png" 
+    <img src= "{{ url_for('static',filename='test.png') }}"></script>
+    <h2>This is a blog website</h2>
