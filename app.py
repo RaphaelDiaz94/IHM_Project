@@ -4,13 +4,11 @@ from flask_bootstrap import Bootstrap
 import sqlite3
 import os
 import psycopg2
-from flask_sockets import sockets
-import logging
-import redis
-import gevent
 import boto3
-from werkzeug.utils import secure_filename
 from PIL import Image
+
+
+
 app = Flask(__name__)
 Bootstrap(app)
 

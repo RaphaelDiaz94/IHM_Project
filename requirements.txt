@@ -3,3 +3,4 @@ gunicorn
 flask_bootstrap
 psycopg2
 boto3
+PIL
