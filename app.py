@@ -26,12 +26,17 @@ def index():
     file_name = 'Users_raphaeldiaz_Desktop_test.png'
 
 
+    try :
+        img = s3.download_file(
+            Bucket = BUCKET_NAME,
+            Filename=file_name,  
+            Key = file_name,  
+            )
+    
+    except Exception as e:
+        print(e)
+        print('Error downloading image')
 
-    img = s3.download_file(
-        Bucket = BUCKET_NAME,
-        Filename=file_name,  
-        Key = file_name,  
-        )
 
     src=r'/Users/raphaeldiaz/Desktop/IHM_Projet/Users_raphaeldiaz_Desktop_test.png'
     des=r'/Users/raphaeldiaz/Desktop/IHM_Projet/static/images/Users_raphaeldiaz_Desktop_test.png'
