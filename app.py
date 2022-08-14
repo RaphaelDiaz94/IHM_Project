@@ -23,22 +23,14 @@ def index():
                      )
     BUCKET_NAME='myphotobucketraph'
 
-    file_name = 'Users_raphaeldiaz_Desktop_test.png'
-    print("test")
+    file_name = 'images/Users_raphaeldiaz_Desktop_test.png'
 
     try :
-        #img = s3.download_file(
-         #   Bucket = BUCKET_NAME,
-         #   Filename=file_name,  
-         #   Key = file_name,  
-           # )
-
-        with open('file_name', 'wb') as f:
-            s3.download_fileobj('BUCKET_NAME', 'file_name', f)
-            print(f)
-
-
-
+        img = s3.download_file(
+        Bucket = BUCKET_NAME,
+        Filename=file_name,  
+        Key = file_name,  
+    )
 
     
     except Exception as e:
