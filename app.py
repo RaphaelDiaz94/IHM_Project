@@ -23,14 +23,16 @@ def index():
                      )
     BUCKET_NAME='myphotobucketraph'
 
-    file_name = 'images/Users_raphaeldiaz_Desktop_test.png'
+    file_name = 'Users_raphaeldiaz_Desktop_test.png'
 
     try :
+        print("try")
         img = s3.download_file(
         Bucket = BUCKET_NAME,
         Filename=file_name,  
         Key = file_name,  
     )
+        print('try ok')
 
     
     except Exception as e:
@@ -51,6 +53,6 @@ def index():
     val = cur.fetchall()
     print(val)
 
-    return render_template('index.html', val=val, cur=cur , f=f)
+    return render_template('index.html', val=val, cur=cur , img=img)
 
 
