@@ -42,7 +42,7 @@ def index():
     #des=r'/Users/raphaeldiaz/Desktop/IHM_Projet/static/images/Users_raphaeldiaz_Desktop_test.png'
     #os.rename(src,des)
 
-    print(e)
+    print(img)
     print("OK")
 
     
