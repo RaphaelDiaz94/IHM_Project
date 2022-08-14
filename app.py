@@ -26,12 +26,12 @@ def index():
     file_name = 'Users_raphaeldiaz_Desktop_test.png'
 
     try :
-        img = s3.download_file(
-        Bucket = BUCKET_NAME,
-        Filename=file_name,  
-        Key = file_name,  
-    )
-
+    
+        url = boto3.client('s3').generate_presigned_url(
+            ClientMethod='get_object', 
+            Params={'Bucket': 'BUCKET_NAME', 'Key': 'file_name'},
+        ExpiresIn=3600)
+        print(url)
     except Exception as e:
         print(e)
         print('Error downloading image')
