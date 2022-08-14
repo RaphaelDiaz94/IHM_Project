@@ -59,6 +59,6 @@ def index():
     val = cur.fetchall()
     print(val)
 
-    return render_template('index.html', val=val, cur=cur , img=img)
+    return render_template('index.html', val=val, cur=cur , f=f)
 
 
