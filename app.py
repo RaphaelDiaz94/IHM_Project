@@ -18,21 +18,20 @@ def index():
 
 
     s3 = boto3.client('s3',
-                    aws_access_key_id='AKIAVA5FQS27ZQZRC4ER',
-                    aws_secret_access_key= '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',
+                    aws_access_key_id='AKIAVA5FQS276OPE5LYU',
+                    aws_secret_access_key= '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',
                      )
     BUCKET_NAME='myphotobucketraph'
 
     file_name = 'Users_raphaeldiaz_Desktop_test.png'
 
     try :
-        print("try")
         img = s3.download_file(
         Bucket = BUCKET_NAME,
         Filename=file_name,  
         Key = file_name,  
     )
-        print('try ok')
+      
 
     
     except Exception as e:
