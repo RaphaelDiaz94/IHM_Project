@@ -32,7 +32,6 @@ def index():
             ClientMethod='get_object', 
             Params={'Bucket': 'BUCKET_NAME', 'Key': 'file_name'},
         ExpiresIn=3600)
-        filename = urllib.parse.quote_plus(filename)
         print(filename)
 
     except Exception as e:
