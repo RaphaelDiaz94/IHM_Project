@@ -6,6 +6,7 @@ import os
 import psycopg2
 import boto3
 from PIL import Image
+import urllib
 
 
 
@@ -31,7 +32,9 @@ def index():
             ClientMethod='get_object', 
             Params={'Bucket': 'BUCKET_NAME', 'Key': 'file_name'},
         ExpiresIn=3600)
+        filename = urllib.parse.quote_plus(filename)
         print(filename)
+
     except Exception as e:
         print(e)
         print('Error downloading image')
