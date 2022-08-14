@@ -48,6 +48,6 @@ def index():
     cur.execute("SELECT * FROM stats;")
     val = cur.fetchall()
 
-    return render_template('index.html', val=val, cur=cur , img=img)
+    return render_template('index.html', val=val, cur=cur , url=url)
 
 
