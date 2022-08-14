@@ -27,11 +27,11 @@ def index():
 
     try :
     
-        url = boto3.client('s3').generate_presigned_url(
+        filename = boto3.client('s3').generate_presigned_url(
             ClientMethod='get_object', 
             Params={'Bucket': 'BUCKET_NAME', 'Key': 'file_name'},
         ExpiresIn=3600)
-        print(url)
+        print(filename)
     except Exception as e:
         print(e)
         print('Error downloading image')
@@ -48,6 +48,6 @@ def index():
     cur.execute("SELECT * FROM stats;")
     val = cur.fetchall()
 
-    return render_template('index.html', val=val, cur=cur , url=url)
+    return render_template('index.html', val=val, cur=cur , filename=filename)
 
 
