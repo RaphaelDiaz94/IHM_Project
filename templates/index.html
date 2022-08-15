@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
     <h1>{% block title %}{% endblock %}</h1>
+    {% block body %}
+    <img src="{{ filename }}" class="img-thumbnail" alt="..."></span>
 {% endblock %}
-{% block body %}
-<img src="{{ filename }}" class="img-thumbnail" alt="..."></span>
-{% endblock %}
+
