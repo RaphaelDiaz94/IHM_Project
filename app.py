@@ -24,14 +24,25 @@ def index():
                      )
     BUCKET_NAME='myphotobucketraph'
 
-    file_name = 'Users_raphaeldiaz_Desktop_test.png'
+    #file_name = 'Users_raphaeldiaz_Desktop_test.png'
+
+    theobjects = s3.list_objects_v2(Bucket=BUCKET_NAME)
+    liste = []
+    for object in theobjects['Contents']:
+        liste.append(object['Key'])
+        print (object['Key'])
 
     try :
     
-        filename = boto3.client('s3').generate_presigned_url(
-            ClientMethod='get_object', 
-            Params={'Bucket': BUCKET_NAME, 'Key': file_name},
-        ExpiresIn=3600)
+        list_filename = []
+        for i in range (len(liste)):
+
+            filename = boto3.client('s3').generate_presigned_url(
+                ClientMethod='get_object', 
+                Params={'Bucket': BUCKET_NAME, 'Key': liste[i]},
+                ExpiresIn=3600)
+            
+            list_filename.append(filename)
 
     except Exception as e:
         print(e)
@@ -49,6 +60,6 @@ def index():
     cur.execute("SELECT * FROM stats;")
     val = cur.fetchall()
 
-    return render_template('index.html', val=val, cur=cur , filename=filename , nom_de_la_rue = nom_de_la_rue)
+    return render_template('index.html', val=val, cur=cur , list_filename=list_filename , nom_de_la_rue = nom_de_la_rue)
 
 
