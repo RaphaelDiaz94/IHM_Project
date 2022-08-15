@@ -21,43 +21,11 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
             <li class="nav-item active">
-                <a class="nav-link" href="aide">Aide</a>
+                <a class="nav-link" href="home">Home</a>
             </li>
             </ul>
         </div>
     </nav>
-
-    <td>{{filename}}</td>
-    <figure class="figure">
-      <span class="border">
-      <image src=
-      <img src="{{ filename }}" class="img-thumbnail" alt="..."></span>
-      <figcaption class="figure-caption">Rue de la paix,Paris</figcaption>
-    </figure>
-
-      <table class="table table-striped">
-        <thead class="thead-dark">
-          <tr>
-            <th scope="col">ID</th>
-            <th scope="col">Eléments</th>
-            <th scope="col">Nombre d'éléments</th>
-            <th scope="col">Précision</th>
-          </tr>
-        </thead>
-        <tbody>
-        {% for x in range(val|length)%}
-        {% set tup = val[x]%}
-          <tr>
-            {% for i in range(tup|length) %}
-            <td>{{tup[i]}}</td>
-            {% endfor %}
-          </tr>
-        {% endfor %}
-        </tbody>
-      </table>
-   
-    
-
 
     <div class="container">
         {% block content %} {% endblock %}

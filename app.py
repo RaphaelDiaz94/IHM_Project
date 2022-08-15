@@ -32,7 +32,6 @@ def index():
             ClientMethod='get_object', 
             Params={'Bucket': BUCKET_NAME, 'Key': file_name},
         ExpiresIn=3600)
-        print(type(filename))
 
     except Exception as e:
         print(e)
