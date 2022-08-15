@@ -15,7 +15,7 @@ Bootstrap(app)
 
 
 @app.route('/')
-def base():
+def index():
 
 
     s3 = boto3.client('s3',
@@ -49,6 +49,6 @@ def base():
     cur.execute("SELECT * FROM stats;")
     val = cur.fetchall()
 
-    return render_template('base.html', val=val, cur=cur , filename=filename)
+    return render_template('index.html', val=val, cur=cur , filename=filename)
 
 
