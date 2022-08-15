@@ -30,7 +30,7 @@ def index():
     
         filename = boto3.client('s3').generate_presigned_url(
             ClientMethod='get_object', 
-            Params={'Bucket': 'BUCKET_NAME', 'Key': 'file_name'},
+            Params={'Bucket': BUCKET_NAME, 'Key': file_name},
         ExpiresIn=3600)
         print(type(filename))
 
