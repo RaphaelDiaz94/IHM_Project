@@ -4,7 +4,7 @@
     <h1>{% block title %} IHM DETECT TOWN {% endblock %}</h1>
     {% for x in range(list_filename|length)%}
     <span class="border"><img src="{{ list_filename[x] }}" class="img-thumbnail" alt="..."></span>
-    {del list_filename[x]}
+    {{del list_filename[x]}}
     {% endfor %}
     <figcaption class="figure-caption">{{ nom_de_la_rue }}</figcaption>
 
