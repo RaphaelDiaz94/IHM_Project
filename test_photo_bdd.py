@@ -8,7 +8,7 @@ s3 = boto3.client('s3',
                     aws_secret_access_key= 't1qJKmysOwm/9OvStAERVaQkoRa0dCgGqgOUArJZ',
                      )
 BUCKET_NAME='myphotobucketraph'
-img = Image.open('/Users/raphaeldiaz/Desktop/test.png')
+img = Image.open('/Users/raphaeldiaz/Desktop/image3.png')
 if img:
     filename = secure_filename(img.filename)
     img.save(filename)
