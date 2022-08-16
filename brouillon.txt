@@ -45,3 +45,12 @@
        <script type = "image/png" 
     <img src= "{{ url_for('static',filename='test.png') }}"></script>
     <h2>This is a blog website</h2>
+
+
+
+
+
+        {% for item in list_filename%}
+    <div class="border"><img src="{{ item }}" class="img-thumbnail" alt="..."></div>
+    {% endfor %}
+    <figcaption class="figure-caption">{{ nom_de_la_rue }}</figcaption>
