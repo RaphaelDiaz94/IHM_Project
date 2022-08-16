@@ -5,7 +5,6 @@ h1 {
     padding: 10px;
 }
 
-
 .d-block w-50{
     border: 2px rgb(10, 0, 0) solid;
     margin-right: auto;
@@ -13,11 +12,12 @@ h1 {
 }
 
 
-
 .table table-striped{
 
     border: 2px rgb(10, 0, 0) solid;
     margin-right: auto;
+    width: 50%;
+
 }
 
 
