@@ -17,10 +17,10 @@
         <!-- Wrapper for slides -->
         
         <div class="carousel-inner">
+        {% for item in list_filename%}
           <div class="item active">
-            {% for item in list_filename%}
             <img src="{{ item }}" alt= "{{ nom_de_la_rue }}">
-            {% endfor %}
+        {% endfor %}
           </div>
           </div>
         </div>
