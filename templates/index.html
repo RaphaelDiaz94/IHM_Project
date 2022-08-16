@@ -6,7 +6,6 @@
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
         <!-- Indicators -->
 
-        {% for item in list_filename%}
             {% for x in range(list_filename|length)%}
                 <ol class="carousel-indicators">
                 <li data-target="#myCarousel" data-slide-to="{{x}}" class="active"></li>
@@ -14,6 +13,7 @@
             {% endfor %}
       
         <!-- Wrapper for slides -->
+        {% for item in list_filename%}
         <div class="carousel-inner">
           <div class="item active">
             <img src="{{ item }}" alt= "{{ nom_de_la_rue }}">
