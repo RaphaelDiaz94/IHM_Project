@@ -6,10 +6,10 @@ h1 {
 }
 
 
-.d-block w-50{
+.d-block w-100{
     border: 2px rgb(10, 0, 0) solid;
     margin-right: auto;
-    margin-left: auto;
+    margin-left:auto
 }
 
 
