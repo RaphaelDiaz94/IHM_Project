@@ -12,7 +12,7 @@ cur = conn.cursor()
 #print("table stats créée")
 
 
-cur.execute("INSERT INTO stats (nom_element, nb_element, precision) VALUES (%s, %s ,%s)",("trotinette",3, 60))
+cur.execute("INSERT INTO stats (nom_element, nb_element, precision) VALUES (%s, %s ,%s)",("Train",0, 100))
 print("insertion ok")
 conn.commit()
 print("commit ok")
