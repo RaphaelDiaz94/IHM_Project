@@ -24,7 +24,6 @@ def index():
                      )
     BUCKET_NAME='myphotobucketraph'
 
-    #file_name = 'Users_raphaeldiaz_Desktop_test.png'
 
     theobjects = s3.list_objects_v2(Bucket=BUCKET_NAME)
     liste = []
@@ -48,10 +47,6 @@ def index():
         print(e)
         print('Error downloading image')
 
-
-    #src=r'/Users/raphaeldiaz/Desktop/IHM_Projet/Users_raphaeldiaz_Desktop_test.png'
-    #des=r'/Users/raphaeldiaz/Desktop/IHM_Projet/static/images/Users_raphaeldiaz_Desktop_test.png'
-    #os.rename(src,des)
 
     nom_de_la_rue = 'Rue de la Paix'
     
