@@ -64,7 +64,7 @@ def index():
         nb_element.append(t[2])
         precision.append(t[3])
 
-    legend = 'Monthly Data'
+    legend = 'Nombre d element en fonction du type'
     labels = nom_element
     values = nb_element 
 
