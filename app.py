@@ -55,11 +55,18 @@ def index():
     cur.execute("SELECT * FROM stats;")
     val = cur.fetchall()
 
-    print(val)
+    nom_element = []
+    nb_element = []
+    precision = []
+    for i in range(len(val)):
+        t = val[i]
+        nom_element.append(t[1])
+        nb_element.append(t[2])
+        precision.append(t[3])
 
     legend = 'Monthly Data'
-    labels = ["January", "February", "March", "April", "May", "June", "July", "August"]
-    values = [10, 9, 8, 7, 6, 4, 7, 8]  
+    labels = nom_element
+    values = nb_element 
 
     return render_template('index.html', val=val, cur=cur , list_filename=list_filename , nom_de_la_rue = nom_de_la_rue, legend=legend, labels = labels, values=values)
 
