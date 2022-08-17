@@ -55,6 +55,8 @@ def index():
     cur.execute("SELECT * FROM stats;")
     val = cur.fetchall()
 
+    print(val)
+
     legend = 'Monthly Data'
     labels = ["January", "February", "March", "April", "May", "June", "July", "August"]
     values = [10, 9, 8, 7, 6, 4, 7, 8]  
