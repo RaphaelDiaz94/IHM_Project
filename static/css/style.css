@@ -15,7 +15,8 @@ h1 {
 
 #carouselExampleControls {
 
-    left: 350px;
+    display: block;
+    margin: 0 auto;
 
 
 
