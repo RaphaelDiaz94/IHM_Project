@@ -71,3 +71,9 @@ def index():
     return render_template('index.html', val=val, cur=cur , list_filename=list_filename , nom_de_la_rue = nom_de_la_rue, legend=legend, labels = labels, values=values)
 
 
+@app.route('/Aide')
+def aide():
+
+    return render_template('Aide.html')
+
+    
