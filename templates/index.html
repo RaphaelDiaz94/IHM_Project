@@ -8,7 +8,7 @@
         {% for x in range(list_filename|length)%}
                 <div class="carousel-item {% if loop.index == 1 %} active {% endif %}" id="slide{{ loop.index }}">
                   <img class="d-block w-50" src="{{ list_filename[x] }}" width="500" height="400"> 
-                  <h5>{{ nom_rue[x] }}</h5>
+                  <h5>style="margin-top: 2px;margin-left: 150px;">{{ nom_rue[x] }}</h5>
                 </div>
       
           {% endfor %} 
