@@ -6,13 +6,14 @@
       <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" style="width:1000px" >
         <div class="carousel-inner">
         {% for item in list_filename%}
+          {% for nomrue in nom_rue%}
                 <div class="carousel-item {% if loop.index == 1 %} active {% endif %}" id="slide{{ loop.index }}">
                   <img class="d-block w-50" src="{{ item }}" width="500" height="400"> 
-                  <h5>{{ item }}</h5>
+                  <h5>{{ nomrue }}</h5>
                 </div>
       
-          
-         {% endfor %} 
+          {% endfor %} 
+        {% endfor %} 
        </div>
         <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev" style= "margin-top: 412px;">
           <span class="carousel-control-prev-icon bg-primary" aria-hidden="true" style = "color: rgba(1, 0, 0, 0.982);"></span>

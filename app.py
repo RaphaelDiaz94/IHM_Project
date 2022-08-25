@@ -34,6 +34,7 @@ def index():
     try :
     
         list_filename = []
+        nom_rue =[]
         for i in range (len(liste)):
 
             filename = boto3.client('s3').generate_presigned_url(
@@ -42,6 +43,9 @@ def index():
                 ExpiresIn=3600)
             
             list_filename.append(filename)
+            x = liste[i].split('_',3)
+            x = x[3].split('.',1)
+            nom_rue.append(x[0])
 
     except Exception as e:
         print(e)
@@ -68,7 +72,7 @@ def index():
     labels = nom_element
     values = nb_element 
 
-    return render_template('index.html', val=val, cur=cur , list_filename=list_filename , nom_de_la_rue = nom_de_la_rue, legend=legend, labels = labels, values=values)
+    return render_template('index.html', val=val, cur=cur , list_filename=list_filename , nom_de_la_rue = nom_de_la_rue, legend=legend, labels = labels, values=values , nom_rue=nom_rue)
 
 
 @app.route('/aide')

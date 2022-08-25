@@ -12,6 +12,16 @@ liste = []
 for object in theobjects['Contents']:
     liste.append(object['Key'])
     #print (object['Key'])
-    
+nom_rue =[]
 for i in range (len(liste)):
-    print(liste[i])
+    
+    x = liste[i].split('_',3)
+    x = x[3].split('.',1)
+    nom_rue.append(x[0])
+
+for j in range(len(nom_rue)):
+    print(nom_rue[j])
+
+
+    
+   
