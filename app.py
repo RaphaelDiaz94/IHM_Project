@@ -19,8 +19,8 @@ def index():
 
 
     s3 = boto3.client('s3',
-                    aws_access_key_id='AKIAVA5FQS27WBIIFVGX',
-                    aws_secret_access_key= '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',
+                    aws_access_key_id='AKIAVA5FQS276OPE5LYU',
+                    aws_secret_access_key= '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',
                      )
     BUCKET_NAME='myphotobucketraph'
 
@@ -68,7 +68,6 @@ def index():
         nom_element.append(t[1])
         nb_element.append(t[2])
         precision.append(t[3])
-        nom_fichier.append(t[4])
 
     legend = 'Nombre d element en fonction du type'
     labels = nom_element
