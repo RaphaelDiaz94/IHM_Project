@@ -1,14 +1,12 @@
-from flask import Flask, render_template, request
 from werkzeug.utils import secure_filename
-from matplotlib import image
 from PIL import Image
 import boto3
 s3 = boto3.client('s3',
-                    aws_access_key_id='AKIAVA5FQS27ZQZRC4ER',
-                    aws_secret_access_key= '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',
+                    aws_access_key_id='AKIAVA5FQS275KLPM7ND',
+                    aws_secret_access_key= '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',
                      )
 BUCKET_NAME='myphotobucketraph'
-img = Image.open('/Users/raphaeldiaz/Desktop/image4.jpg')
+img = Image.open('/Users/raphaeldiaz/Desktop/ruedelafoi.jpg')
 if img:
     filename = secure_filename(img.filename)
     img.save(filename)
