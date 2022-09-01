@@ -8,11 +8,11 @@ conn = psycopg2.connect("postgres://owshwcafnfsgsx:2b4cf5ade3fb7b2f25e3f1b66cd29
 print("connexion ok")
 
 cur = conn.cursor()
-#cur.execute("CREATE TABLE stats (id serial PRIMARY KEY,nom_element char, nb_element integer,precision integer);")
-#print("table stats créée")
+cur.execute("DROP TABLE IF EXISTS stats;")
+cur.execute("CREATE TABLE stats (id serial PRIMARY KEY,nom_element char(50), nb_element integer,precision char(50));")
+print("table stats créée")
 
 
-cur.execute("INSERT INTO stats (nom_element, nb_element, precision) VALUES (%s, %s ,%s)",("Train",0, 100))
 print("insertion ok")
 conn.commit()
 print("commit ok")
