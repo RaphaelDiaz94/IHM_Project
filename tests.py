@@ -15,7 +15,7 @@ def tests():
     cur.execute("INSERT INTO tests (nom_element, nb_element, precision, nomrue) VALUES (%s, %s ,%s ,%s)",("avion",1, "01-09-2022", "rue de la foi"))
 
     conn.commit()
-    cur.execute("SELECT * FROM stats;")
+    cur.execute("SELECT * FROM tests;")
     val = cur.fetchall()
     assert type(val) == list
     assert len(val) != 0
