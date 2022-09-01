@@ -19,8 +19,8 @@ def tests():
     val = cur.fetchall()
     assert type(val) == list
     assert len(val) != 0
-    assert len(val[0])== 4
-    assert len(val[1])== 4
+    assert len(val[0])== 5
+    assert len(val[1])== 5
     for i in range (len(val)):
         temp = val[i]
         print(temp)
