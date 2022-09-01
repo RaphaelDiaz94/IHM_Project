@@ -62,11 +62,13 @@ def index():
     nom_element = []
     nb_element = []
     precision = []
+    nom_fichier = []
     for i in range(len(val)):
         t = val[i]
         nom_element.append(t[1])
         nb_element.append(t[2])
         precision.append(t[3])
+        nom_fichier.append(t[4])
 
     legend = 'Nombre d element en fonction du type'
     labels = nom_element

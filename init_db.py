@@ -9,7 +9,7 @@ print("connexion ok")
 
 cur = conn.cursor()
 cur.execute("DROP TABLE IF EXISTS stats;")
-cur.execute("CREATE TABLE stats (id serial PRIMARY KEY,nom_element char(50), nb_element integer,precision char(50));")
+cur.execute("CREATE TABLE stats (id serial PRIMARY KEY,nom_element char(50), nb_element integer,precision char(50), nom_fichier char(50));")
 print("table stats créée")
 
 
