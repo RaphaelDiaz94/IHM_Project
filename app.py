@@ -19,8 +19,8 @@ def index():
 
 
     s3 = boto3.client('s3',
-                    aws_access_key_id='AKIAVA5FQS276OPE5LYU',
-                    aws_secret_access_key= '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',
+                    aws_access_key_id='AKIAVA5FQS275KLPM7ND',
+                    aws_secret_access_key='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',
                      )
     BUCKET_NAME='myphotobucketraph'
 
