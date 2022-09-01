@@ -27,9 +27,10 @@ def index():
 
     theobjects = s3.list_objects_v2(Bucket=BUCKET_NAME)
     liste = []
-    for object in theobjects['Contents']:
-        liste.append(object['Key'])
-        print (object['Key'])
+    if len(theobjects['Contents']) > 0:
+        for object in theobjects['Contents']:
+            liste.append(object['Key'])
+            print (object['Key'])
 
     try :
     
