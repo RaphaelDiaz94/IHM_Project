@@ -1,5 +1,4 @@
-
-from flask import Flask, render_template,request
+from flask import Flask, render_template, request
 from flask_bootstrap import Bootstrap
 import sqlite3
 import os
@@ -9,53 +8,54 @@ from PIL import Image
 import urllib
 
 
-
 app = Flask(__name__)
 Bootstrap(app)
 
 
-@app.route('/')
+@app.route("/")
 def index():
 
-
-    s3 = boto3.client('s3',
-                    aws_access_key_id='AKIAVA5FQS275KLPM7ND',
-                    aws_secret_access_key='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',
-                     )
-    BUCKET_NAME='myphotobucketraph'
-
+    s3 = boto3.client(
+        "s3",
+        aws_access_key_id="AKIAVA5FQS275KLPM7ND",
+        aws_secret_access_key="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",
+    )
+    BUCKET_NAME = "myphotobucketraph"
 
     theobjects = s3.list_objects_v2(Bucket=BUCKET_NAME)
     liste = []
-    if 'Contents' in theobjects:
-        for object in theobjects['Contents']:
-            liste.append(object['Key'])
-            print (object['Key'])
+    if "Contents" in theobjects:
+        for object in theobjects["Contents"]:
+            liste.append(object["Key"])
+            print(object["Key"])
 
-    try :
-    
+    try:
+
         list_filename = []
-        nom_rue =[]
-        for i in range (len(liste)):
+        nom_rue = []
+        for i in range(len(liste)):
 
-            filename = boto3.client('s3').generate_presigned_url(
-                ClientMethod='get_object', 
-                Params={'Bucket': BUCKET_NAME, 'Key': liste[i]},
-                ExpiresIn=3600)
-            
+            filename = boto3.client("s3").generate_presigned_url(
+                ClientMethod="get_object",
+                Params={"Bucket": BUCKET_NAME, "Key": liste[i]},
+                ExpiresIn=3600,
+            )
+
             list_filename.append(filename)
-            x = liste[i].split('_',3)
-            x = x[3].split('.',1)
+            x = liste[i].split("_", 3)
+            x = x[3].split(".", 1)
             nom_rue.append(x[0])
 
     except Exception as e:
         print(e)
-        print('Error downloading image')
+        print("Error downloading image")
 
+    nom_de_la_rue = "Rue de la Paix"
 
-    nom_de_la_rue = 'Rue de la Paix'
-    
-    conn = psycopg2.connect("postgres://owshwcafnfsgsx:2b4cf5ade3fb7b2f25e3f1b66cd29d5a7e420fdd1d51b4c01df4b6086f1db630@ec2-18-214-35-70.compute-1.amazonaws.com:5432/d5arg29ce13853", sslmode='require')
+    conn = psycopg2.connect(
+        "postgres://owshwcafnfsgsx:2b4cf5ade3fb7b2f25e3f1b66cd29d5a7e420fdd1d51b4c01df4b6086f1db630@ec2-18-214-35-70.compute-1.amazonaws.com:5432/d5arg29ce13853",
+        sslmode="require",
+    )
     cur = conn.cursor()
     cur.execute("SELECT * FROM stats;")
     val = cur.fetchall()
@@ -70,16 +70,24 @@ def index():
         nb_element.append(t[2])
         precision.append(t[3])
 
-    legend = 'Nombre d element en fonction du type'
+    legend = "Nombre d element en fonction du type"
     labels = nom_element
-    values = nb_element 
+    values = nb_element
 
-    return render_template('index.html', val=val, cur=cur , list_filename=list_filename , nom_de_la_rue = nom_de_la_rue, legend=legend, labels = labels, values=values , nom_rue=nom_rue)
+    return render_template(
+        "index.html",
+        val=val,
+        cur=cur,
+        list_filename=list_filename,
+        nom_de_la_rue=nom_de_la_rue,
+        legend=legend,
+        labels=labels,
+        values=values,
+        nom_rue=nom_rue,
+    )
 
 
-@app.route('/aide')
+@app.route("/aide")
 def aide():
 
-    return render_template('aide.html')
-
-    
+    return render_template("aide.html")
