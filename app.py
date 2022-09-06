@@ -1,11 +1,7 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template
 from flask_bootstrap import Bootstrap
-import sqlite3
-import os
 import psycopg2
 import boto3
-from PIL import Image
-import urllib
 
 
 app = Flask(__name__)
@@ -63,7 +59,6 @@ def index():
     nom_element = []
     nb_element = []
     precision = []
-    nom_fichier = []
     for i in range(len(val)):
         t = val[i]
         nom_element.append(t[1])
