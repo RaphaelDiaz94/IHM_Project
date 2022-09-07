@@ -19,6 +19,7 @@ jobs:
           pip install pytest
           pip install flask
           pip install pytest-cov
+          pip install flask_bootstrap
           pytest --cov=./ --cov-report=xml tests.py
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v1
