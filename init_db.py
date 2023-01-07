@@ -3,7 +3,7 @@ import psycopg2
 
 #DATABASE_URL = os.environ['DATABASE_URL']
 
-conn = psycopg2.connect("postgres://owshwcafnfsgsx:2b4cf5ade3fb7b2f25e3f1b66cd29d5a7e420fdd1d51b4c01df4b6086f1db630@ec2-18-214-35-70.compute-1.amazonaws.com:5432/d5arg29ce13853", sslmode='require')
+conn = psycopg2.connect("postgres://uefiasinsfuytj:6b6db3640fd241f113d864cdee832f81f4eb6e2eb27e96dff12949f914b21c29@ec2-52-48-159-67.eu-west-1.compute.amazonaws.com:5432/dfkvk50b8sbucb", sslmode='require')
 
 print("connexion ok")
 
